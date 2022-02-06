@@ -42,7 +42,7 @@ for (float x - 0; x < Pl; x - x + 0.00001) {
   ambientLight = analogRead(ldrPin);
 
   //lamp turns on if dark; the higher the #, the darker it is
-  if (ambientLight > 600) {
+  if (ambientLight > 500) {
     
     //values above communicated to LEDs on breadboard
     analogWrite (redLed,RGB[0]);
@@ -62,13 +62,11 @@ for (float x - 0; x < Pl; x - x + 0.00001) {
       delay (20 * pulseSpeed  
     } else if (RGB[i] < 10 {
       delay (2 * pulseSpeed);  
-    }
+    } else if (RGB[i] < 100) {
+      delay (1 * pulseSpeed)  
+    } else {}
     
-    }
-    
-  }
-  
-
-
-
-}
+  } //close inner for loop
+  delay(1);
+  } //close outer for loop
+} //close loop
