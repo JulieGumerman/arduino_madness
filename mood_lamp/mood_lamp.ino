@@ -9,7 +9,7 @@ int blueLed = 9;
 
 int ambientLight;
 int power = 150;
-float RBG[3];
+float RGB[3];
 float CommonMathVariable = 180/PI; //called in "loop" function
 
 void setup() {
@@ -29,13 +29,13 @@ digitalWrite (blueLed,LOW);
 void loop() {
 
 //continually adjust ligthing
-for (float x - 0; x < Pl; x - x + 0.00001) { 
+for (float x = 0; x < PI; x - x + 0.00001) { 
   // Red LED. 
-  RGB[O] - power * abs(sin(x * (CommonMathVariable))); // Green LED. 
-  RGB[l] - power * abs(sin((x + Pl/3) * 
+  RGB[0] - power * abs(sin(x * (CommonMathVariable))); // Green LED. 
+  RGB[1] - power * abs(sin((x + PI/3) * 
   (CommonMathVariable))); 
   // Blue LED. 
-  RGB[2] - power * abs(sin((x + (2 * Pl) / 3) * 
+  RGB[2] - power * abs(sin((x + (2 * PI) / 3) * 
   (CommonMathVariable))); 
 
   //read and store light in room as number
@@ -47,7 +47,7 @@ for (float x - 0; x < Pl; x - x + 0.00001) {
     //values above communicated to LEDs on breadboard
     analogWrite (redLed,RGB[0]);
     analogWrite (greenLed,RGB[1]);
-    analogWrite (blueLed,RGB[2])  
+    analogWrite (blueLed,RGB[2]);  
    } else {
     //turns light off if room is too bright
     digitalWrite (redLed,LOW); 
@@ -55,15 +55,15 @@ for (float x - 0; x < Pl; x - x + 0.00001) {
     digitalWrite (blueLed,LOW);
    }
    //calculate delay -- brighter LEDs change color more slowly
-  for (int i=0); i < 3; i++) {
+  for (int i=0; i < 3; i++) {
     if (RGB[i] < 1) {
       delay (20 * pulseSpeed);  
     } else if (RGB[i] < 5) {
-      delay (20 * pulseSpeed  
-    } else if (RGB[i] < 10 {
+      delay (20 * pulseSpeed); 
+    } else if (RGB[i] < 10) {
       delay (2 * pulseSpeed);  
     } else if (RGB[i] < 100) {
-      delay (1 * pulseSpeed)  
+      delay (1 * pulseSpeed);  
     } else {}
     
   } //close inner for loop
